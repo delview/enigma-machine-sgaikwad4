@@ -2,6 +2,9 @@
 
 # Ask user if they want to encrypt or decrypt a message
 def choice():
+
+# Accept a string that will either encrypt or decrypt
+
     while True:
         choice = input("Do you want to [e]ncrypt or [d]ecrypt a message").strip().title()
         if choice == "E":
@@ -12,8 +15,6 @@ def choice():
             break
         else:
             print("Please enter a valid answer")
-    
-# Accept a string that will either encrypt or decrypt
 
 # Encrypting function
 def encrypt():
@@ -29,3 +30,15 @@ choice()
 # Print the final encrypted or decrypted string to the user
 
 # Ask user if they want to use the program again
+restart = input("Do you want to do another encryption or decryption? [Y]es or [N]o")
+while True:
+    if restart == "Y":
+        choice()
+        break
+    elif restart == "N":
+        print("Goodbye") 
+        break
+    else:
+        print("Please enter a valid answer")
+
+
