@@ -1,10 +1,9 @@
-
+# Make lists
+message = []
+final_message = []
 
 # Ask user if they want to encrypt or decrypt a message
 def choice():
-
-# Accept a string that will either encrypt or decrypt
-
     while True:
         choice = input("Do you want to [e]ncrypt or [d]ecrypt a message").strip().title()
         if choice == "E":
@@ -18,27 +17,33 @@ def choice():
 
 # Encrypting function
 def encrypt():
+    # Accept a string that will either encrypt or decrypt
     print("hello")
+    restart()
 # Decrypting function
 def decrypt():
+    # Accept a string that will either encrypt or decrypt
     print("jovn")
+    restart()
 
+# Ask user if they want to use the program again
+def restart():
+    while True:
+        restart = input("Do you want to do another encryption or decryption? [Y]es or [N]o").strip().title()
+        if restart == "Y":
+            choice()
+            break
+        elif restart == "N":
+            print("Goodbye") 
+            break
+        else:
+            print("Please enter a valid answer")
 # Tell user what cipher the program is using
 print("Hello, and welcome to the Enigma machine. This machine only works with the atbash cipher")
 choice()
 
 # Print the final encrypted or decrypted string to the user
 
-# Ask user if they want to use the program again
-restart = input("Do you want to do another encryption or decryption? [Y]es or [N]o")
-while True:
-    if restart == "Y":
-        choice()
-        break
-    elif restart == "N":
-        print("Goodbye") 
-        break
-    else:
-        print("Please enter a valid answer")
+
 
 
