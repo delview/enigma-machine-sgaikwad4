@@ -3,20 +3,25 @@ final_message = []
 
 # Create a dictionary
 cipher_atbash = {"a":"z", "b":"y", "c":"x", "d":"w", "e":"v", "f":"u", "g":"t", "h":"s", "i":"r", "j":"q", "k":"p", "l":"o", "m":"n", "n":"m", "o":"l", "p":"k", "q":"j", "r":"i", "s":"h", "t":"g", "u":"f", "v":"e", "w":"d", "x":"c", "y":"b", "z":"a",}
-# Ask user if they want to encrypt or decrypt a message
+
+# Create a dictionary for 
+
+# Ask user what cipher they want to use
 def choice():
     while True:
-        choice = input("Do you want to [e]ncrypt or [d]ecrypt a message").strip().title()
-        if choice == "E":
+        choice = input("What cipher do you want to use? [A]tbash or [C]aesar?").strip().title()
+        if choice == "A":
             atbash()
             break
-        elif choice== "D":
+        elif choice== "C":
+            # make a loop for asking user if they want to encrypt or decrypting
+            
             pass
             break
         else:
             print("Please enter a valid answer")
 
-# Encrypting function
+# function for atbash
 def atbash():
     # Accept a string that will either encrypt or decrypt
     message = input("Enter a message you want to encrypt: ").strip().lower()
@@ -27,6 +32,10 @@ def atbash():
             print("Oh no")
     print("".join(map(str, final_message)))
     restart()
+
+# Encrypting function for caesar
+
+# Decryting function for caesar
 
 # Ask user if they want to use the program again
 def restart():
