@@ -1,37 +1,31 @@
 # Make lists
-message = []
 final_message = []
 
 # Create a dictionary
-cipher = {"a":"z", "b":"y", "c":"x", "d":"w", "e":"v", "f":"u", "g":"t", "h":"s", "i":"r", "j":"q", "k":"p", "l":"o", "m":"n", "n":"m", "o":"l", "p":"k", "q":"j", "r":"i", "s":"h", "t":"g", "u":"f", "v":"e", "w":"d", "x":"c", "y":"b", "z":"a",}
+cipher_atbash = {"a":"z", "b":"y", "c":"x", "d":"w", "e":"v", "f":"u", "g":"t", "h":"s", "i":"r", "j":"q", "k":"p", "l":"o", "m":"n", "n":"m", "o":"l", "p":"k", "q":"j", "r":"i", "s":"h", "t":"g", "u":"f", "v":"e", "w":"d", "x":"c", "y":"b", "z":"a",}
 # Ask user if they want to encrypt or decrypt a message
 def choice():
     while True:
         choice = input("Do you want to [e]ncrypt or [d]ecrypt a message").strip().title()
         if choice == "E":
-            encrypt()
+            atbash()
             break
         elif choice== "D":
-            decrypt()
+            pass
             break
         else:
             print("Please enter a valid answer")
 
 # Encrypting function
-def encrypt():
+def atbash():
     # Accept a string that will either encrypt or decrypt
     message = input("Enter a message you want to encrypt: ").strip().lower()
     for letter in message:
-        if letter in cipher:
-            final_message.append(cipher[letter])
+        if letter in cipher_atbash:
+            final_message.append(cipher_atbash[letter])
         else:
             print("Oh no")
-    print(final_message)
-    restart()
-# Decrypting function
-def decrypt():
-    # Accept a string that will either encrypt or decrypt
-    print("jovn")
+    print("".join(map(str, final_message)))
     restart()
 
 # Ask user if they want to use the program again
