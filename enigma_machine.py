@@ -20,7 +20,13 @@ def choice():
 # Encrypting function
 def encrypt():
     # Accept a string that will either encrypt or decrypt
-    print("hello")
+    message = input("Enter a message you want to encrypt: ").strip().lower()
+    for letter in message:
+        if letter in message:
+            final_message.append(cipher[letter])
+        else:
+            print("Oh no")
+    print(final_message)
     restart()
 # Decrypting function
 def decrypt():
