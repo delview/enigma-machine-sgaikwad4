@@ -22,7 +22,7 @@ def encrypt():
     # Accept a string that will either encrypt or decrypt
     message = input("Enter a message you want to encrypt: ").strip().lower()
     for letter in message:
-        if letter in message:
+        if letter in cipher:
             final_message.append(cipher[letter])
         else:
             print("Oh no")
