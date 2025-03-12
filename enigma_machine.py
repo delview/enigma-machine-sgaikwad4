@@ -5,7 +5,7 @@ cipher_atbash = {"a":"z", "b":"y", "c":"x", "d":"w", "e":"v", "f":"u", "g":"t", 
 def choice():
     while True:
         choice = input("What cipher do you want to use? [A]tbash or [C]aesar?").strip().title()
-        message = input("Enter a message you want to encrypt: ").strip().lower()
+        message = input("Enter a message you want to encrypt (please enter only letters, no special characters or numbers): ").strip().lower()
         if choice == "A" and message.isalpha():
             atbash(message)
             break
@@ -20,7 +20,7 @@ def choice():
                     caesar_encrypt(message)
                     break
                 elif caesar_choice == "D":
-                    caesar_decrypt()
+                    caesar_decrypt(message)
                     break
                 else:
                     print("Please enter a valid answer")
@@ -52,9 +52,20 @@ def caesar_encrypt(message):
             final_message.append(letter)
     print("".join(map(str, final_message)))
     restart()
+
 # Decryting function for caesar
-def caesar_decrypt():
-    pass
+def caesar_decrypt(message):
+    # Make list
+    final_message = []
+    for letter in message:
+        if letter.isalpha():
+            shifted_letter = chr(ord(letter) - 3)
+            final_message.append(shifted_letter)
+        else:
+            final_message.append(letter)
+    print("".join(map(str, final_message)))
+    restart()
+
 # Ask user if they want to use the program again
 def restart():
     while True:
@@ -67,12 +78,7 @@ def restart():
             break
         else:
             print("Please enter a valid answer")
+
 # Tell user what cipher the program is using
 print("Hello, and welcome to the Enigma machine. This machine only works with the atbash cipher")
 choice()
-
-# Print the final encrypted or decrypted string to the user
-
-
-
-
