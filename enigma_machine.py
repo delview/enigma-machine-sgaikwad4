@@ -13,21 +13,24 @@ def choice():
             print("Something went wrong")
             continue
         elif choice== "C":
-            # make a loop for asking user if they want to encrypt or decrypting
-            caesar_choice = input("Do you want to [E]ncrypt or [D]ecrypt").strip().title()
-            if caesar_choice == "E":
-                caesar_encrypt()
-                break
-            elif caesar_choice == "D":
-                caesar_decrypt()
-                break
+            while True:
+                # make a loop for asking user if they want to encrypt or decrypting
+                caesar_choice = input("Do you want to [E]ncrypt or [D]ecrypt").strip().title()
+                if caesar_choice == "E":
+                    caesar_encrypt(message)
+                    break
+                elif caesar_choice == "D":
+                    caesar_decrypt()
+                    break
+                else:
+                    print("Please enter a valid answer")
+                    continue
             break
         else:
             print("Please enter a valid answer")
 
 # function for atbash 
 def atbash(message):
-    
     # Make lists
     final_message = []
     # Accept a string that will either encrypt or decrypt 
@@ -38,8 +41,17 @@ def atbash(message):
     restart()
 
 # Encrypting function for caesar
-def caesar_encrypt():
-    pass
+def caesar_encrypt(message):
+    # Make list
+    final_message = []
+    for letter in message:
+        if letter.isalpha():
+            shifted_letter = chr(ord(letter) + 3)
+            final_message.append(shifted_letter)
+        else:
+            final_message.append(letter)
+    print("".join(map(str, final_message)))
+    restart()
 # Decryting function for caesar
 def caesar_decrypt():
     pass
